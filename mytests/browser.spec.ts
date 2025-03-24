@@ -13,7 +13,7 @@ test('login test',async()=>{
     const page2: Page = await browserContext1.newPage();
 
     
-    await page1.goto('https://falcon-awsfit.highradius.com/RRDMSProject/signin.do');
+    await page1.goto('');
     const emailId= await page1.locator('//input[contains(@name,"username")]');
     const password= await page1.locator('//input[contains(@name,"password")]');
     const loginButton= await page1.locator('//a[contains(@class,"submitButton")]//span[text()="SUBMIT"]');
