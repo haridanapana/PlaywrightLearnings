@@ -2,7 +2,7 @@ const {webkit,firefox,chromium}= require('playwright');
 import { test, expect,Browser,Page, BrowserContext } from '@playwright/test';
 
 test('login test',async()=>{
-    const browser:Browser=await chromium.launch({headless: false,channel: 'chrome'});
+    const browser:Browser=await chromium.launch({headless: true,channel: 'chrome'});
 
     //browser context 1
     const browserContext1: BrowserContext=await browser.newContext();
