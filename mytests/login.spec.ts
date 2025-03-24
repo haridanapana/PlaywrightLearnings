@@ -4,7 +4,7 @@ import { test, expect,Browser,Page } from '@playwright/test';
 test('login test',async()=>{
     const browser:Browser=await firefox.launch({headless: false});
     const page: Page = await browser.newPage();
-    await page.goto('https://falcon-awsfit.highradius.com/RRDMSProject/signin.do');
+    await page.goto('');
     const emailId= await page.locator('//input[contains(@name,"username")]');
     const password= await page.locator('//input[contains(@name,"password")]');
     const loginButton= await page.locator('//a[contains(@class,"submitButton")]//span[text()="SUBMIT"]');
