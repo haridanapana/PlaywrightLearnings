@@ -6,10 +6,10 @@ export class Database {
   // Connect to the database
   async connect() {
     this.connection = await mysql.createConnection({
-        host: '10.1.22.19', // Replace with your DB host
-        user: 'reportifyi',      // Replace with your DB username
+        host: '10.1.13.80', // Replace with your DB host
+        user: 'reportifyiUser',      // Replace with your DB username
         password: 'Reportifyi@123', // Replace with your DB password
-        database: 'CorePlatform_Utilities_DB', // Replace with your DB name
+        database: 'reportify', // Replace with your DB name
         port: 3306,
         ssl: undefined
     });
@@ -17,11 +17,11 @@ export class Database {
   }
 
   // Execute a query
-  async query(sql: string, params?: any[]): Promise<any> {
+  async query(sql: string): Promise<any> {
     if (!this.connection) {
       throw new Error('Database connection is not established');
     }
-    const [rows] = await this.connection.execute(sql, params);
+    const [rows] = await this.connection.execute(sql);
     return rows;
   }
 

@@ -8,7 +8,7 @@ test('Database connection and query example', async () => {
   await db.connect();
 
   // Execute a query
-  const result = await db.query('SELECT * FROM reportify.run_history WHERE run_uuid="a029fe8e-7f7f-4c09-bff8-37dfff9abdee";');
+  const result = await db.query('SELECT * FROM reportify.run_history WHERE run_uuid="a029fe8e-7f7f-4c09-bff8-37dfff9abdee"');
   console.log('Query Result:', result);
 
   // Validate the query result
