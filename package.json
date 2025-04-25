@@ -12,5 +12,9 @@
     "@types/node": "^22.10.7",
     "playwright": "^1.51.0",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.0"
   }
 }

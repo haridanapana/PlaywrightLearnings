@@ -7,11 +7,14 @@ test('dropdown test',async()=>{
     await page.goto('https://www.magupdate.co.uk/magazine-subscription/phrr');
 
     const country_dropdown='select#Contact_CountryCode';
-    // await page.selectOption(country_dropdown,{index: 0});
+    await page.selectOption(country_dropdown,{index: 0});
     // await page.selectOption(country_dropdown,{value: 'AU'});
     // await page.selectOption(country_dropdown,{label: 'India'});
     
     //to get all options
+    //page: Represents the current page in Playwright.
+    //$$: A shorthand for querySelectorAll, which selects all elements matching the given selector.
+    //selector: A string representing the CSS selector used to find the elements.     
     const allOptions=await page.$$(country_dropdown+'>option');
     console.log(allOptions.length);
 
@@ -20,6 +23,7 @@ test('dropdown test',async()=>{
         console.log(text);
         if(text=='India'){
             await page.selectOption(country_dropdown,{label: text});
+            
             break;
         }
     }

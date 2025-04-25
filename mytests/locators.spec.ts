@@ -1,13 +1,19 @@
 const {webkit,firefox,chromium}= require('playwright');
 import { test, expect,Browser,Page } from '@playwright/test';
 
-test('login test',async()=>{
+test.use({viewport:{width:1500,height:800}});
+
+test('lolocators test',async()=>{
     const browser:Browser=await chromium.launch({headless: false});
     const page: Page = await browser.newPage();
     await page.goto('https://falcon-awsfit.highradius.com/RRDMSProject/signin.do');
 
+    console.log(await page.viewportSize()?.width);
+    console.log(await page.viewportSize()?.height);
+
+
     // Locator id, className, text,css,xpath
-    const emailId= await page.locator('//input[contains(@name,"username")]');
+    const emailId= await page.locator('//input[contains(@name,"username")]/');
     const password= await page.locator('//input[contains(@name,"password")]');
     
     //getByRole

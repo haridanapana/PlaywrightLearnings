@@ -2,7 +2,7 @@ const {webkit,firefox,chromium}= require('playwright');
 import { test, expect,Browser,Page } from '@playwright/test';
 
 test('register test',async()=>{
-    const browser:Browser=await chromium.launch({headless: false});
+    const browser:Browser=await chromium.launch({headless: true});
     const page: Page = await browser.newPage();
     await page.goto('https://orangehrm.com/en/30-day-free-trial');
 
