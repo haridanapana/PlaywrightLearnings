@@ -19,12 +19,4 @@ test('multiple tabs ',async({})=>{
     
     await newPage.getByRole('textbox',{name:'Email or Phone number'});
     await newPage.waitForTimeout(1000);
-
-
-    
-
-
-    
-
-
 });
